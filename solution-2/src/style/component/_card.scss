@@ -1,0 +1,41 @@
+@use "../utils/functions" as func;
+@use "sass:math";
+/*
+    .card
+        .card__image
+        .card__content
+            .card__title
+            ...
+*/
+.card {
+    --card-padding: 1rem;
+    --card-radius: 20px;
+    --card-max-size: #{func.rem(320px)};
+    --card-max-content-size: 26ch;
+    --gap: 1rem;
+    /*
+        size limite max width
+    */
+    max-width: var(--card-max-size);
+    padding: var(--card-padding);
+    border-radius: var(--card-radius);
+    
+    background-color: var(--bg-secondary);
+    margin: var(--gap) auto;
+}
+.card__image {
+    border-radius: calc(var(--card-radius) / 2);
+}
+
+.card__content {
+    max-width: var(--card-max-content-size);
+    margin: var(--gap) auto;
+    color: var(--text-secondary);
+}
+
+.card__title {
+    color: var(--text-primary);
+    margin: var(--gap) auto;
+    font-size: func.rem(22px);
+    line-height: math.div(28, 22);
+}

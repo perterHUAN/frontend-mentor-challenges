@@ -1,0 +1,17 @@
+@use '../utils/functions' as func;
+@use 'sass:math';
+body {
+    /*
+     center the children elements both horizontally and vertically.
+    */
+    display: grid;
+    place-content: center;
+
+    font-size: func.rem(15px);
+    font-family: "Outfit", sans-serif;
+
+    text-align: center;
+    line-height: math.div(19,15);
+    
+    background-color: var(--bg-primary);
+}

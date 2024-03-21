@@ -1,0 +1,21 @@
+@use "../utils/functions" as func;
+html {
+  block-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+
+  display: grid;
+  place-content: center;
+
+  font-size: 1rem;
+  font-family: "Figtree", sans-serif;
+  line-height: 1.5;
+
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+
+  --padding-x: #{func.rem(24px)};
+  padding-inline: var(--padding-x);
+}

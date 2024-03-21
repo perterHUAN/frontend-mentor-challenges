@@ -1,0 +1,66 @@
+@use "../utils/functions" as func;
+.card {
+  --card-max-width: #{func.rem(384px)};
+  --card-border-radius: #{func.rem(20px)};
+  --card-inner-border-radius: #{func.rem(10px)};
+  --card-paddding: #{func.rem(24px)};
+  --card-gap: #{func.rem(24px)};
+  --card-box-shadow-x: #{func.rem(8px)};
+  --card-box-shadow-y: #{func.rem(8px)};
+  --card-box-shadow-color: var(--black);
+
+  max-width: var(--card-max-width);
+  border-radius: var(--card-border-radius);
+  background-color: white;
+  padding: var(--card-paddding);
+  box-shadow: var(--card-box-shadow-x) var(--card-box-shadow-y) 0 0
+    var(--card-box-shadow-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+}
+
+.card__image {
+  border-radius: var(--card-inner-border-radius);
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: func.rem(12px);
+
+  .learning {
+    font-weight: bold;
+    font-size: func.rem(14px);
+    padding: func.rem(4px) func.rem(12px);
+    background-color: var(--bg-primary);
+    border-radius: func.rem(4px);
+    color: var(--text-primary);
+  }
+  .description {
+    color: var(--text-secondary);
+  }
+  .title {
+    text-decoration: none;
+    color: var(--text-primary);
+    &:hover {
+      color: var(--yellow);
+      cursor: pointer;
+    }
+  }
+}
+.card__author {
+  display: flex;
+  gap: func.rem(12px);
+  align-items: center;
+
+  .avatar {
+    width: func.rem(32px);
+    aspect-ratio: 1;
+  }
+  .name {
+    font-weight: bold;
+  }
+}
